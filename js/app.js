@@ -8,7 +8,14 @@ const myImg = [
   "img-7.jpg",
   "img-8.jpg",
 ];
+let imgIndex = 0;
 const getImg = document.getElementById("myImg");
 setInterval(() => {
-  console.log(" i got it");
-}, 1000);
+  if (imgIndex >= myImg.length) {
+    imgIndex = 0;
+  }
+  const imgUrl = myImg[imgIndex];
+  getImg.setAttribute("src", imgUrl);
+  console.log(imgUrl);
+  imgIndex++;
+}, 1500);
